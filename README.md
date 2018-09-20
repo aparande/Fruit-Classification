@@ -1,4 +1,4 @@
-#Fruit Classification with Tensorflow
+# Fruit Classification with Tensorflow
 
 ## Goal:
  - To implement a Convolutional Neural Network in Tensorflow which can accurately disntinguish fruits from each other
