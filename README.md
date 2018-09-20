@@ -2,7 +2,7 @@
 
 ## Goal:
  - To implement a Convolutional Neural Network in Tensorflow which can accurately disntinguish fruits from each other
- - To establish undergo an incremental devleopment cycle in building the model, starting with a few classes and building upwards
+ - To undergo an incremental devleopment cycle in building the model, starting with a few classes and building upwards
 
 ## Results:
  - Final model trained to classify 40 fruits. Successful with 92.47% Accuracy
