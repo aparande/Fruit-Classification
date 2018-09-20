@@ -1,0 +1,168 @@
+run 7
+	Epochs: 30
+	Learning Rate: 0.75
+	Batch size: 59
+	Classes Learned: 10
+	Optimizer: Stochastic Gradient Descent
+
+	Structure: 
+		Conv (filter = [20 20 3 10], stride = 1, pool = 2) -> 
+		Conv (filter = [5 5 10 20], stride=1, pool=2) -> 
+		Dense [1000] -> 
+		Dense [100] -> 
+		Softmax
+
+	Activation Function: Sigmoid
+	Loss Function: Cross Entropy
+	Regularization: None
+	Dropout: 0.0
+
+	Final Loss: 1.547
+	Train Time: 2h 26m
+	Final Validation Accuracy: 79.13%
+	Final Training Accuracy: Not Collected
+
+run 8	
+	Epochs: 20
+	Learning Rate: 0.75
+	Batch size: 59
+	Classes Learned: 10
+	Optimizer: Momentum (momentum = 0.5)
+
+	Structure: 
+		Conv (filter = [20 20 3 10], stride = 1, pool = 2) -> 
+		Conv (filter = [5 5 10 20], stride=1, pool=2) -> 
+		Dense [1000] -> 
+		Dense [100] -> 
+		Softmax
+
+	Activation Function: Sigmoid
+	Loss Function: Cross Entropy
+	Regularization: None
+	Dropout: 0.0
+
+	Final Loss: 1.477
+	Train Time: 1hr 14m
+	Final Validation Accuracy: 89.94%
+	Final Training Accuracy: 89.21%
+
+run 9
+	Epochs: 20
+	Learning Rate: 0.75
+	Batch size: 59
+	Classes Learned: 10
+	Optimizer: Momentum (momentum = 0.5)
+
+	Structure: 
+		Conv (filter = [20 20 3 10], stride = 1, pool = 2) -> 
+		Conv (filter = [5 5 10 20], stride=1, pool=2) -> 
+		Dense [1000] -> 
+		Dense [100] -> 
+		Softmax
+
+	Activation Function: Sigmoid
+	Loss Function: Cross Entropy
+	Regularization: None
+	Dropout: 0.5
+
+	Final Loss: 2.03
+	Train Time: 1hr 26m
+	Final Validation Accuracy: 10.06% 
+	Final Training Accuracy: NA
+	Notes: Stopped after 10 epochs. Model was not training
+
+run 10
+	Epochs: 20
+	Learning Rate: 0.75
+	Batch size: 59
+	Classes Learned: 10
+	Optimizer: Momentum (momentum = 0.75)
+
+	Structure: 
+		Conv (filter = [20 20 3 10], stride = 1, pool = 4) -> 
+		Conv (filter = [5 5 10 20], stride=1, pool=2) -> 
+		Dense [1000] -> 
+		Dense [100] -> 
+		Softmax
+
+	Activation Function: Sigmoid
+	Loss Function: Cross Entropy
+	Regularization: None
+	Dropout: 1
+
+	Final Loss: 2.302
+	Train Time: 1hr 8m
+	Final Validation Accuracy: 8.69% 
+	Final Training Accuracy: 10.48%
+
+run 11
+	Epochs: 20
+	Learning Rate: 0.001
+	Batch size: 59
+	Classes Learned: 10
+	Optimizer: Adam (beta1=0.9, beta2=0.999))
+
+	Structure: 
+		Conv (filter = [20 20 3 10], stride = 1, pool = 4) -> 
+		Conv (filter = [5 5 10 20], stride=1, pool=2) -> 
+		Dense [1000] -> 
+		Dense [100] -> 
+		Softmax
+
+	Activation Function: Sigmoid
+	Loss Function: Cross Entropy
+	Regularization: None
+	Dropout: 1
+
+	Final Loss: 1.523
+	Train Time: 1hr 25min
+	Final Validation Accuracy: 98.09%
+	Final Training Accuracy: 98.00%
+
+run 12
+	Epochs: 5
+	Learning Rate: 0.001
+	Batch size: 59
+	Classes Learned: 10
+	Optimizer: Adam (beta1=0.9, beta2=0.999))
+
+	Structure: 
+		Conv (filter = [20 20 3 10], stride = 1, pool = 4) -> 
+		Conv (filter = [5 5 10 20], stride=1, pool=2) -> 
+		Dense [1000] -> 
+		Dense [100] -> 
+		Softmax
+
+	Activation Function: Leaky ReLU (alpha = 0.2)
+	Loss Function: Cross Entropy
+	Regularization: None
+	Dropout: 1
+
+	Final Loss: 8.552e-5 
+	Train Time: 22m
+	Final Validation Accuracy: 98.31%
+	Final Training Accuracy: 98.74%
+
+run 13
+	Epochs: 20
+	Learning Rate: 0.001
+	Batch size: 59
+	Classes Learned: 40
+	Optimizer: Adam (beta1=0.9, beta2=0.999))
+
+	Structure: 
+		Conv (filter = [20 20 3 10], stride = 1, pool = 4) -> 
+		Conv (filter = [5 5 10 20], stride=1, pool=2) -> 
+		Dense [1000] -> 
+		Dense [100] -> 
+		Softmax
+
+	Activation Function: Leaky ReLU (alpha = 0.2)
+	Loss Function: Cross Entropy
+	Regularization: None
+	Dropout: 1
+
+	Final Loss: 4.1983e-4 
+	Train Time: 20h 22m
+	Final Validation Accuracy: 91.95%
+	Final Training Accuracy: 92.47%

@@ -1,0 +1,8 @@
+Step 0: loss = 1.41
+Step 2: loss = 0.14
+Step 4: loss = 0.01
+Doing evaluation on validation Set
+Num examples: 3827  Num correct: 3711  Precision @ 1: 0.9697
+Doing evaluation on training set
+Num examples: 15397  Num correct: 14985  Precision @ 1: 0.9732
+Doing evaluation on the test set
