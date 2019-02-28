@@ -46,33 +46,28 @@ def get_training_data():
         validation_images, validation_labels = format_data(validation_half, training_file, "Validation")
         
         return training_images, training_labels
-    #try:
-     #   training_pickle = open(os.path.join(TRAINING_DIR, "training.pkl"), 'rb')
-      #  images, labels = pickle.load(training_pickle)
-       # print("Loaded training_data from pickle")
-        #training_pickle.close()
-
-        #combo = list(zip(images, labels))
-        #random.shuffle(combo)
-        #images, labels = zip(*combo)
-
-        #return images, labels
 
 def get_test_data(batch_size):
-    data = []
-    for subdir, dirs, files in os.walk(TRAINING_DIR):
-        for file in files:
-            label = os.path.basename(subdir)
-            if label in CLASSES:
-                path = os.path.join(subdir, file)
-                data.append((image_to_array(path), get_label(label)))
+    try:
+        test_file = h5.File(TEST_DIR+'fruit_data.hdf5', 'r')
+        return test_file["Test"]["images"], test_file["Test"]["labels"]
+    except:
+        print("Constructing test data from scratch")
+        data = []
+        for subdir, dirs, files in os.walk(TEST_DIR):
+            for file in files:
+                label = os.path.basename(subdir)
+                if label in CLASSES:
+                    path = os.path.join(subdir, file)
+                    data.append((image_to_array(path), get_label(label)))
 
-    test_images, test_labels = format_data(data)
-    iteration = 1
-    while batch_size * iteration < len(data):
-        iteration += 1
+        test_file = h5.File(TEST_DIR+'fruit_data.hdf5', 'w')
+        test_images, test_labels = format_data(data, test_file, "Test")
+        iteration = 1
+        while batch_size * iteration < len(data):
+            iteration += 1
 
-    return test_images[:batch_size * (iteration - 1)], test_labels[:batch_size * (iteration - 1)]
+        return test_images[:batch_size * (iteration - 1)], test_labels[:batch_size * (iteration - 1)]
 
 def get_validation_data(batch_size): 
     training_file = h5.File(TRAINING_DIR+'fruit_data.hdf5', 'r')
