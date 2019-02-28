@@ -6,4 +6,4 @@ data_bunch = ImageDataBunch.from_folder("fruits-360", train="Training", test="Te
 
 model = create_cnn(data_bunch, models.resnet34, metrics=error_rate)
 model.fit_one_cycle(1)
-learn.save('stage-1')
+model.save('stage-1')
